@@ -1,4 +1,4 @@
-/
+
 <!DOCTYPE html>
 <html lang="en" ng-app="movieLibrary">
 
@@ -23,12 +23,16 @@
                     <button ng-hide="!isDeleting" type="button" class="btn done-button" ng-click="doneDeleteMovies()">Done</button>
                 </div>
             </div>
-            <div class="movies-container">
-                <li class="movie-container" ng-repeat="movie in movies track by $index">
-                    <div class="movie-item" ng-click="onMovieClicked()">
+            <ul class="movies-container">
+              <div ng-repeat = "movie in movies">
+                <li class="movie-container" my-repeat spec-movie="movie">
+              </div>
+                <!-- <li class="movie-container" my-repeat spec-movie = "movie2"> -->
+
+                    <!-- <div class="movie-item" ng-click="onMovieClicked()">
                         <div class="movie-image-container">
-                            <img class="movie-image" ng-src="{{movie.posterImage}}" alt="film image" ng-click="deleteMovie()" />
-                            <div ng-show="isDeleting" class="movie-delete-icon glyphicon glyphicon-minus-sign delete-icon" />
+                            <img class="movie-image" ng-src="{{movie.posterImage}}" alt="film image"  />
+                            <div ng-show="isDeleting" ng-click="deleteMovie(movie)" class="movie-delete-icon glyphicon glyphicon-minus-sign delete-icon" />
                         </div>
                         <div class="movie-name">{{movie.name | uppercase}}</div>
                         <div class="movie-sub-info">
@@ -37,15 +41,15 @@
                                 <span ng-repeat="res in movie.supportedResolution track by $index">{{res}}p</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </li>
-            </div>
+            </ul>
         </div>
     </div>
     </div>
     </div>
     <!--load scripts-->
-    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="angular/angular.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/movies/moviesService.js"></script>
     <script type="text/javascript" src="app/movies/moviesCtrl.js"></script>
